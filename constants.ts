@@ -1,3 +1,4 @@
+
 import { WasteRecord, WasteType, Status, RoutePoint, RegulatoryProfile, MonthlyReport, ComplianceCheckitem, NearbyGenerator, WastewaterReport } from './types';
 
 export const MOCK_RECORDS: WasteRecord[] = [
@@ -32,32 +33,32 @@ export const MOCK_ROUTE_POINTS: RoutePoint[] = [
 ];
 
 export const NEARBY_GENERATORS: NearbyGenerator[] = [
-  { id: 'G1', name: 'Your Restaurant (You)', distanceKm: 0, currentLoadKg: 12, wasteType: 'UCO', address: '32nd St #5-20', lat: 50, lng: 45 },
-  { id: 'G2', name: 'La Mia Pizzeria', distanceKm: 0.8, currentLoadKg: 45, wasteType: 'UCO', address: '34th St #6-10', lat: 40, lng: 35 },
+  { id: 'G1', name: 'Your Restaurant (You)', distanceKm: 0, currentLoadKg: 12, wasteType: 'UCO', address: 'Main St #5-20', lat: 50, lng: 45 },
+  { id: 'G2', name: 'La Mia Pizzeria', distanceKm: 0.8, currentLoadKg: 45, wasteType: 'UCO', address: '3rd Ave #6-10', lat: 40, lng: 35 },
   { id: 'G3', name: 'Burger & Beer', distanceKm: 1.2, currentLoadKg: 15, wasteType: 'UCO', address: '5th Ave #30-12', lat: 60, lng: 55 },
-  { id: 'G4', name: 'Grand Plaza Hotel', distanceKm: 2.5, currentLoadKg: 120, wasteType: 'FOG', address: 'San Martin Ave', lat: 20, lng: 80 },
+  { id: 'G4', name: 'Grand Plaza Hotel', distanceKm: 2.5, currentLoadKg: 120, wasteType: 'FOG', address: 'Harbor Blvd', lat: 20, lng: 80 },
 ];
 
 export const MOCK_PROFILE: RegulatoryProfile = {
-  razonSocial: "CARIBE GASTRONOMY S.A.S",
+  razonSocial: "CARIBBEAN GASTRONOMY LLC",
   nit: "900.123.456-7",
   repLegal: "John Doe",
-  direccion: "32nd St # 5-20, Historic Center",
-  municipio: "Cartagena, Colombia",
-  actividad: "Full-service restaurant and catering",
+  direccion: "Main St # 5-20, City Center",
+  municipio: "Metropolis, NY",
+  actividad: "Full-service hospitality and catering",
   ciiu: "5611",
   fechaInscripcion: "2023-01-15",
   actoAdministrativo: "Res. 0456 of 2023",
   
   contactoOperativo: "Jane Smith",
-  telefonoContacto: "+57 300 987 6543",
-  emailContacto: "operations@caribegastro.com",
+  telefonoContacto: "+1 555-0198",
+  emailContacto: "ops@caribbeangastro.com",
   encargadoPlataforma: "Charles Rodriguez",
-  cargoEncargado: "Head of Sustainability",
+  cargoEncargado: "Director of Sustainability",
 
   tipoTrampa: "Civil Works",
   capacidadTrampaLts: 500,
-  ubicacionTrampa: "Rear washing station",
+  ubicacionTrampa: "Rear discharge station",
   frecuenciaMantenimientoDias: 15,
   ultimoMantenimiento: "2023-10-10"
 };
@@ -81,34 +82,34 @@ export const MOCK_WASTEWATER_REPORTS: WastewaterReport[] = [
   {
     id: 'LAB-2023-01',
     date: '2023-06-15',
-    laboratory: 'Northern Environmental Labs',
+    laboratory: 'International Environmental Labs',
     ph: 7.2,
     grasasAceitesMgL: 85,
     solidosSuspendidosMgL: 120,
     dqoMgL: 450,
     status: 'Compliant',
-    recommendations: ['Maintain current cleaning frequency', 'Results within regulatory limits']
+    recommendations: ['Maintain current maintenance schedule', 'Analysis within regulatory limits']
   },
   {
     id: 'LAB-2023-02',
     date: '2023-01-10',
-    laboratory: 'EcoLabs S.A.S',
+    laboratory: 'Global EcoSolutions',
     ph: 5.8,
     grasasAceitesMgL: 150,
     solidosSuspendidosMgL: 300,
     dqoMgL: 800,
     status: 'NonCompliant',
-    recommendations: ['Increase grease trap cleaning frequency', 'Review detergent dosing (Low pH)', 'Schedule sludge suction']
+    recommendations: ['Increase grease trap cleaning frequency', 'Review industrial degreaser usage', 'Schedule immediate sludge removal']
   }
 ];
 
 export const COMPLIANCE_CHECKLIST: ComplianceCheckitem[] = [
-  { id: '1', label: 'Environmental Registration (UCO)', isComplete: true, requiredFor: 'Registration' },
-  { id: '2', label: 'Valid Administrative Act', isComplete: true, requiredFor: 'Registration' },
-  { id: '3', label: 'Waste Management Plan', isComplete: true, requiredFor: 'Registration' },
-  { id: '4', label: 'Q1 Disposal Certificates', isComplete: true, requiredFor: 'Monthly' },
-  { id: '5', label: 'Q2 Disposal Certificates', isComplete: false, requiredFor: 'Monthly' },
-  { id: '6', label: 'Annual Staff Training', isComplete: false, requiredFor: 'Yearly' },
+  { id: '1', label: 'Environmental Permit (UCO)', isComplete: true, requiredFor: 'Registration' },
+  { id: '2', label: 'Valid Administrative Order', isComplete: true, requiredFor: 'Registration' },
+  { id: '3', label: 'Solid Waste Management Plan', isComplete: true, requiredFor: 'Registration' },
+  { id: '4', label: 'Quarterly Disposal Logs', isComplete: true, requiredFor: 'Monthly' },
+  { id: '5', label: 'Water Quality Analysis', isComplete: false, requiredFor: 'Monthly' },
+  { id: '6', label: 'Sustainability Training (Annual)', isComplete: false, requiredFor: 'Yearly' },
 ];
 
 export const LCA_FACTORS = {

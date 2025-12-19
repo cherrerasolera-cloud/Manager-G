@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
 import { RoutePoint } from '../types';
@@ -34,14 +35,13 @@ export const RouteMap: React.FC<RouteMapProps> = ({ points }) => {
       .y(d => yScale(d.lat))
       .curve(d3.curveCatmullRom.alpha(0.5));
 
-    // Simple sorting to simulate a path: Depot -> Closest -> ... -> Depot
-    const pathPoints = [...points].sort((a, b) => a.lng - b.lng); // Dummy sort logic for demo
+    const pathPoints = [...points].sort((a, b) => a.lng - b.lng); 
     
     // Path
     svg.append("path")
       .datum(pathPoints)
       .attr("fill", "none")
-      .attr("stroke", "#D4AF37") // Gold Color
+      .attr("stroke", "#D4AF37") 
       .attr("stroke-width", 2)
       .attr("stroke-dasharray", "5,5")
       .attr("d", lineGenerator)
@@ -61,7 +61,7 @@ export const RouteMap: React.FC<RouteMapProps> = ({ points }) => {
     groups.append("circle")
       .attr("r", d => d.type === 'depot' ? 10 : 6)
       .attr("fill", d => d.type === 'depot' ? '#10b981' : '#18181b')
-      .attr("stroke", d => d.type === 'depot' ? '#10b981' : '#D4AF37') // Gold border for points
+      .attr("stroke", d => d.type === 'depot' ? '#10b981' : '#D4AF37') 
       .attr("stroke-width", 2)
       .attr("class", "cursor-pointer transition-all hover:scale-125");
 
@@ -80,7 +80,7 @@ export const RouteMap: React.FC<RouteMapProps> = ({ points }) => {
     <div className="w-full bg-surface border border-border rounded-xl overflow-hidden relative shadow-lg">
       <div className="absolute top-4 left-4 z-10 bg-black/50 backdrop-blur px-3 py-1 rounded-md border border-border text-xs text-gray-300 flex items-center gap-2">
         <div className="w-2 h-2 rounded-full bg-secondary animate-pulse"></div>
-        Simulación VRP (Vehicle Routing Problem)
+        VRP Simulation (Vehicle Routing Problem)
       </div>
       <svg ref={svgRef} className="w-full h-[400px] block bg-gradient-to-b from-surface to-background" />
     </div>

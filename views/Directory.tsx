@@ -1,10 +1,11 @@
+
 import React from 'react';
 import { Search, MapPin, Star, MessageSquare, ThumbsUp } from 'lucide-react';
 
 const ENTITIES = [
-    { id: 1, name: 'EcoOil Solutions', type: 'Gestor Autorizado', rating: 4.8, reviews: 124, area: 'Norte' },
-    { id: 2, name: 'BioCombustibles MX', type: 'Planta de Procesamiento', rating: 4.9, reviews: 85, area: 'Industrial' },
-    { id: 3, name: 'ReciclaFácil', type: 'Recolector', rating: 4.5, reviews: 42, area: 'Centro' },
+    { id: 1, name: 'EcoOil Solutions', type: 'Authorized Waste Manager', rating: 4.8, reviews: 124, area: 'North District' },
+    { id: 2, name: 'BioCombustibles Global', type: 'Processing Plant', rating: 4.9, reviews: 85, area: 'Industrial Park' },
+    { id: 3, name: 'RecycleEasy', type: 'Certified Collector', rating: 4.5, reviews: 42, area: 'Downtown' },
 ];
 
 export const Directory: React.FC = () => {
@@ -12,15 +13,15 @@ export const Directory: React.FC = () => {
     <div className="space-y-6">
       <div className="flex flex-col md:flex-row justify-between gap-4">
         <div>
-           <h1 className="text-2xl font-bold text-gray-900 mb-2">Directorio de Gestión</h1>
-           <p className="text-gray-500">Encuentra recolectores certificados, lee reseñas y califica su servicio.</p>
+           <h1 className="text-2xl font-bold text-gray-900 mb-2">Service Directory</h1>
+           <p className="text-gray-500">Find certified collectors, read reviews, and rate your service providers.</p>
         </div>
         
         <div className="relative">
             <Search className="absolute left-3 top-2.5 text-gray-400" size={18} />
             <input 
                 type="text" 
-                placeholder="Buscar por nombre o zona..." 
+                placeholder="Search by name or zone..." 
                 className="pl-10 pr-4 py-2 bg-surface border border-border rounded-lg text-gray-900 w-full md:w-64 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
             />
         </div>
@@ -39,7 +40,7 @@ export const Directory: React.FC = () => {
                                 <Star size={12} fill="currentColor" />
                                 {ent.rating}
                             </div>
-                            <span className="text-[10px] text-gray-400">{ent.reviews} reseñas</span>
+                            <span className="text-[10px] text-gray-400">{ent.reviews} reviews</span>
                         </div>
                     </div>
                     <h3 className="text-gray-900 font-medium text-lg mb-1 group-hover:text-primary transition-colors">{ent.name}</h3>
@@ -47,18 +48,18 @@ export const Directory: React.FC = () => {
                     
                     <div className="flex items-center gap-2 text-xs text-gray-400 mb-4">
                         <MapPin size={14} />
-                        Zona {ent.area}
+                        {ent.area}
                     </div>
                 </div>
 
                 <div className="pt-4 border-t border-border flex gap-2">
                     <button className="flex-1 py-2 rounded-lg bg-gray-50 hover:bg-gray-100 border border-border text-xs text-gray-600 flex items-center justify-center gap-2 transition-colors">
                         <MessageSquare size={14} />
-                        Ver Reseñas
+                        Read Reviews
                     </button>
                     <button className="flex-1 py-2 rounded-lg bg-secondary/5 hover:bg-secondary/10 border border-secondary/20 text-xs text-secondary flex items-center justify-center gap-2 transition-colors font-medium">
                         <ThumbsUp size={14} />
-                        Calificar
+                        Rate Service
                     </button>
                 </div>
             </div>
